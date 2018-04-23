@@ -408,7 +408,7 @@ private:
 template <typename Strand = as::io_service::strand, typename Mutex = std::mutex, template<typename...> class LockGuard = std::lock_guard>
 class server_tls_ws {
 public:
-    using socket_t = mqtt::ws_endpoint<as::ssl::stream<as::ip::tcp::socket>, Strand>;
+    using socket_t = ::mqtt::ws_endpoint<as::ssl::stream<as::ip::tcp::socket>, Strand>;
     using endpoint_t = endpoint<socket_t, Mutex, LockGuard>;
 
     using accept_handler = std::function<void(endpoint_t& ep)>;
